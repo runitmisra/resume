@@ -30,7 +30,7 @@
 
 % serif
 % \usepackage{CormorantGaramond}
-% \usepackage{charter}
+\usepackage{charter}
 
 
 \pagestyle{fancy}
@@ -68,7 +68,14 @@
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\fourSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
@@ -123,7 +130,7 @@
 %-----------SUMMARY-----------
 \section{Professional Summary}
  \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{Cloud Native enthusiast working as a Site Reliability Engineer making complex systems observable, reliable and scalable. \textbf{Certified Kubernetes Administrator} with \textbf{4 years of experience} in developing cloud infrastructure, application deployment on Kubernetes and Infrastructure as Code. Problem solver, lifetime learner, and excellent communicator.}}
+    \small{\item{Cloud Native enthusiast with \textbf{5 years of experience} as a Site Reliability Engineer, specializing in observability, reliability, and scalability of complex systems. \textbf{Certified Kubernetes Administrator} skilled in developing robust cloud infrastructure, orchestrating application deployments on Kubernetes, and implementing Infrastructure as Code (IaC). Proficient in automation, monitoring, and continuous integration/continuous deployment (CI/CD) pipelines. Highly motivated engineer with strong problem-solving and communication skills and experience in learning and growing in a fast-paced environment.}}
  \end{itemize}
 
 %
@@ -133,12 +140,12 @@
     \small{\item{
      \textbf{Cloud Providers}{: AWS, GCP} \\
      \textbf{Containerization}{: Docker} \\
-     \textbf{Orchestration}{: Kubernetes, Argo, Flux} \\
+     \textbf{Orchestration}{: Kubernetes, Argo} \\
      \textbf{CI/CD}{: Github Actions, Gitlab CI, Argo CD} \\
      \textbf{Kubernetes Tools}{: Helm, Rancher, Rook Ceph, Kubernetes Operators} \\
-     \textbf{Monitoring Tools}{: Prometheus, Grafana, Loki, Elasticsearch, Kibana, Fluent-bit, Splunk} \\
-     \textbf{Infrastructure as Code}{: Terraform, Crossplane} \\
-     \textbf{Programming Languages}{: Go, Python, Shell Scripting} \\
+     \textbf{Monitoring Tools}{: Prometheus, Grafana, Loki, Elasticsearch(ELK), Kibana, Fluent-bit, Splunk} \\
+     \textbf{Infrastructure as Code}{: Terraform} \\
+     \textbf{Programming Languages}{: Golang(Go), Python, Shell Scripting} \\
      \textbf{Operating Systems}{: Linux}
     }}
  \end{itemize}
@@ -146,7 +153,7 @@
 %-----------CERTIFICATIONS-----------
 \section{Certifications}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \fourSubheading
       {Certified Kubernetes Administrator}{January 2023}
       {LF-xnjmimklor}{}
   \resumeSubHeadingListEnd
@@ -158,63 +165,43 @@
 
     \resumeSubheading
       {Site Reliability Engineer - InfraCloud Technologies}{October 2022 -- Present}
-      {FinTech Project on HLF Blockchain}{}
       \resumeItemListStart
-        \resumeItem{Leading DevOps/SRE effort and key decision maker in developing India's next-generation distributed financial platform based on Blockchain technology.}
-        \resumeItem{Designed infrastructure for a multi-site, active-active Hyperledger Fabric deployment on kubernetes currently being used in Production with about 100 TPS load}
-        \resumeItem{Contributed in creating an Open Source Hyperledger Fabric installation helper based on Helm - Falcon (https://github.com/npci/falcon)}
-        \resumeItem{Responsible for provisioning and maintenance of Kubernetes clusters on GKE and on-prem servers with Rancher Kubernetes Engine, with Rook-ceph used as storage backend}
-        \resumeItem{Responsible for monitoring the production system and incident response.}
-        \resumeItem{\textbf{Technologies used}: Kubernetes, RKE, GKE, Helm, Rook-ceph, Hyperledger Fabric, HAProxy, Prometheus, Grafana, Elasticsearch, fluent-bit}
+        \resumeItem{Lead DevOps/SRE for blockchain-based projects at one of India's largest FinTech companies, acting as the sole contributor and SME for on-prem and GCP Kubernetes infrastructure design, support and troubleshooting.}
+        \resumeItem{Designed and implemented a highly available, multi-site, active-active Hyperledger Fabric deployment on air-gapped on-premises Rancher Kubernetes(RKE) clusters, handling a high transaction throughput of approximately 250 TPS.}
+        \resumeItem{Developed Gitlab CI pipeline for building Go and Java application docker images in an air-gapped environment.}
+        \resumeItem{Utilized SNI-based routing with CoreDNS, Nginx Ingress Controller and HAProxy to route traffic between multiple physical data centers across India, enabling a single Hyperledger Fabric cluster formation.}
+        \resumeItem{Managed monitoring and incident response for production Kubernetes clusters using Prometheus and Grafana for metrics, and Elasticsearch, Fluent-bit, and Kibana for log shipping and aggregation.}
+        \resumeItem{Contributed to the open-source project Falcon (https://github.com/npci/falcon), a Helm-based deployment helper for Hyperledger Fabric on Kubernetes. Added Prometheus monitoring support to Helm charts and implemented general fixes.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Associate Site Reliability Engineer - InfraCloud Technologies}{July 2021 -- October 2022}
-      {Fission Enterprise and Project Inception}{}
       \resumeItemListStart
-        \resumeItem{Contributed SRE expertise in Kubernetes to the Fission Open Source project and helped improve Helm charts and solved problems faced by other contributors.}
-        \resumeItem{Worked with Clients to provide enterprise support for Fission for their unique use cases.}
-        \resumeItem{Worked as part of a task force in Project Inception (Internal project) to build most commonly used modules for InfraCloud for use in other projects}
-        \resumeItem{Built EKS module in Terraform based on Best Practices and opinionated approach used in InfraCloud.}
-        \resumeItem{Contributed Terraform code which can potentially result in future monetization and revenue source for the company}
-        \resumeItem{\textbf{Technologies used}: Kubernetes, Helm, Terraform, AWS EKS}
-    \resumeItemListEnd
-    \resumeSubSubheading
-     {ThreatMapper and ThreatStryker SaaS Platform}{}
-     \resumeItemListStart
-        \resumeItem{Planned and Developed AWS and Kubernetes infrastructure for multi-tenent SaaS application.}
-        \resumeItem{Responsible for provisioning and maintenance of Kubernetes clusters on GKE and on-prem servers with Rancher Kubernetes Engine}
-        \resumeItem{Designed fully automated Github Actions CI pipeline to run unit tests, linters, build application images and upload artifacts.}
-        \resumeItem{Developed application Helm charts for SaaS portal and contributed to ThreatMapper open source Helm charts.}
-        \resumeItem{Designed GitOps CD pipeline using ArgoCD and app-for-apps pattern enabling one-click deployment to testing as well as production environments.}
-        \resumeItem{\textbf{Technologies used}: AWS, Terraform, Kubernetes, Helm, Github Actions, ArgoCD}
+        \resumeItem{Contributed to Fission open source project, a fast serverless framework for kubernetes (https://github.com/fission/fission) by enhancing developer experience and providing general fixes.}
+        \resumeItem{Helped Fission Enterprise customers by providing SRE and Cloud expertise to help right-size and scale their Fission Enterprise deployments}
+        \resumeItem{Created Terraform EKS wrapper module on top of AWS upstream module with opinionated defaults and following best practices for company-wide usage.}
+        \resumeItem{Contributed in planning and system design of a SaaS cloud security platform on AWS using Terraform, Kubernetes and GitOps principles from scratch.}
+        \resumeItem{Designed and implemented fully automated Github Actions CI pipeline to run unit tests, linters, build application images and upload artifacts for multiple environments.}
+        \resumeItem{Designed GitOps CD pipeline using ArgoCD using advanced Gitops patters like app-for-apps, enabling seamless application deployment to kubernetes with no manual intervention.}
+        \resumeItem{Created an automated and platform agnostic Datadog monitoring system using Terraform for several customer applications for log aggregation, metrics, APM and RUM.}
+        \resumeItem{Onboarded 10+ applications to Datadog running on different platforms like Bare Metal, Serverless, Kubernetes, GCP, AWS, Azure and OSes like Linux and Windows.}
+        \resumeItem{Used Terraform to automate the process of creating Alerts and Dashboards with the help of the DataDog Terraform provider.}
      \resumeItemListEnd
-    \resumeSubSubheading
-     {DataDog Observability Project}{}
-     \resumeItemListStart
-        \resumeItem{Onboarded 3 different customer applications on a centralized DataDog monitoring platform, enabling analysis of logs, metrics and traces with APM and RUM}
-        \resumeItem{Used terraform to automate the process of creating Alerts and Dashboards with the help of the DataDog terraform provider.}
-        \resumeItem{\textbf{Technologies used}: Terraform, DataDog, AWS, GCP}
-     \resumeItemListEnd
-
     \resumeSubheading
       {Site Reliability Engineer - Crest Data Systems}{May 2019 -- July 2021}
-      {Splunk CloudOps}{}
       \resumeItemListStart
-        \resumeItem{Worked on Splunk Cloud SaaS platform among an international team of SREs, NOC engineers, Change Managers and Product Developers for many Fortune 500 companies.}
-        \resumeItem{Used Terraform to manage AWS infrastructure behind customer's Splunk stack and used Puppet for configuration management.}
-        \resumeItem{Followed strict change management processes with following, updating and creating operational runbooks.}
-        \resumeItem{Trained 3 SREs in Splunk Cloud operations process and technologies}
-        \resumeItem{\textbf{Techologies used}: Splunk, Terraform, Puppet, AWS}
+        \resumeItem{Worked on Splunk Cloud SaaS platform among an international team of SREs, NOC engineers, Change Managers and Product Developers for 5000+ customers including many Fortune 500 companies.}
+        \resumeItem{Provided AWS Infrastructure and Splunk cloud support using Terraform and Puppet to keep mission critical customer infrastructure running securely on PCI DSS and HIPAA compliant networks.}
+        \resumeItem{Followed strict change management processes by following, updating and creating operational runbooks, working on JIRA issues related to customer change requests and troubleshooting customer issues.}
+        \resumeItem{Trained 5+ newly joined SREs in Splunk CloudOps processes and practices.}
       \resumeItemListEnd
     
 
     \resumeSubheading
       {Project Management Intern - Crest Data Systems}{December 2018 -- May 2019}
-      {Several Projects}{}
       \resumeItemListStart
         \resumeItem{Ensured proper Agile process compliance across 4 projects}
-        \resumeItem{Held daily Scrum meetings, Managed JIRA board for the team, Created reports like velocity charts and burn-down charts}
+        \resumeItem{Held daily Scrum meetings, Managed JIRA boards, Created reports like velocity charts and burn-down charts}
         \resumeItem{Exposed to several practices in a project’s life cycle from Sprint Planning to Delivery}
       \resumeItemListEnd
 
@@ -224,7 +211,7 @@
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \fourSubheading
       {Charotar University of Science and Technology}{}
       {Bachelor of Techology in Computer Engineering}{July 2015 -- May 2019}
   \resumeSubHeadingListEnd
